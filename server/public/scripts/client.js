@@ -5,6 +5,10 @@ myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
+  .when('/world', {
+    templateUrl: '/views/templates/world.html',
+    controller: 'WorldController as wc',
+  })
     .when('/home', {
       templateUrl: '/views/templates/home.html',
       controller: 'LoginController as lc',
@@ -32,6 +36,6 @@ myApp.config(function($routeProvider, $locationProvider) {
       }
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'world'
     });
 });
