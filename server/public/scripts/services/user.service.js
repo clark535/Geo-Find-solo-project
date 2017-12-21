@@ -2,6 +2,7 @@ myApp.service('UserService', function($http, $location){
   console.log('UserService Loaded');
   var self = this;
   self.userObject = {};
+  self.newCountry = {};
 
   self.getuser = function(){
     console.log('UserService -- getuser');
@@ -28,4 +29,34 @@ myApp.service('UserService', function($http, $location){
       $location.path("/home");
     });
   }
+
+  self.uploadImage= function (){
+    console.log('uploadImage()')
+    var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
+    function openPicker() {
+        fsClient.pick({
+          fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
+          maxSize:102400000,
+          maxFiles:5,
+          minFiles:1
+        }).then(function(response) {
+          // declare this function to handle response
+          self.newCountry.imageUrl = response.filesUploaded[0].url;
+          console.log(self.userObject, self.newCountry.imageUrl);
+          self.newCountry.flag = self.newCountry.imageUrl;  
+        });
+      }
+      openPicker();
+    }
+
+    self.addCountry = function () {
+      console.log('in addCountry');
+      $http({
+        method: 'POST',
+        url: '/user/country',
+        data: self.newCountry
+      }).then(function (response) {
+        console.log('response', response);
+      })
+    }
 });

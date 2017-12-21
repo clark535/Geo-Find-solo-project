@@ -1,6 +1,54 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-
-    <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
-    <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+    <h2 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h2>
+    <h1>Add a Country</h1>
 </div>
+{{uc.newCountry}}
+<br>
+<div class="col-md-4">
+    <div>
+        <input type="text" ng-model="uc.newCountry.country" placeholder="Name of the Country">
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="uc.uploadImage(newCountry.imageUrl)">Upload Flag image</button>
+            <img src="https://cdn.filestackcontent.com/resize=width:48/{{newCountry.imageUrl}}" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="uc.uploadImage(uc.newCountry.image1)">Upload first image</button>
+            <img src="https://cdn.filestackcontent.com/resize=width:48/" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="uc.uploadImage(uc.newCountry.image2)">Upload second image</button>
+            <img src="https://cdn.filestackcontent.com/resize=width:48/" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="uc.uploadImage(uc.newCountry.video)">Upload video</button>
+            <img src="https://cdn.filestackcontent.com/resize=width:48/" alt="Image uploaded with Filestack" title="Image uploaded with Filestack">
+    </div>
+        <br>
+        <br>
+            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry)">Submit Country</button>
+</div>
+
+<button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+
+<!-- <script type="text/javascript">
+    const client = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
+    client.pick();
+  </script> -->
+
+  <!-- <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown">Countries</button>
+            <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
+                    <li></li>
+                </ul>
+        </div> -->

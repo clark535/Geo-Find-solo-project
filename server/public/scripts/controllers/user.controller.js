@@ -3,4 +3,9 @@ myApp.controller('UserController', function(UserService) {
   var vm = this;
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
+  vm.addCountry = UserService.addCountry;
+  vm.newCountry = UserService.newCountry;
+
+  //Filestack controller
+  vm.uploadImage = UserService.uploadImage;
 });
