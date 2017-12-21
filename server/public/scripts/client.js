@@ -8,6 +8,9 @@ myApp.config(function($routeProvider, $locationProvider) {
   .when('/world', {
     templateUrl: '/views/templates/world.html',
     controller: 'WorldController as wc',
+  }).when('/zoom', {
+    templateUrl: '/views/templates/zoom.html',
+    controller: 'ZoomController as zc',
   })
     .when('/home', {
       templateUrl: '/views/templates/home.html',
