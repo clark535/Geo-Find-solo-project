@@ -7,5 +7,8 @@ myApp.controller('UserController', function(UserService) {
   vm.newCountry = UserService.newCountry;
 
   //Filestack controller
-  vm.uploadImage = UserService.uploadImage;
+  vm.uploadFlag = UserService.uploadFlag;
+  vm.uploadImage1 = UserService.uploadImage1;
+  vm.uploadImage2 = UserService.uploadImage2;
+  vm.uploadVideo = UserService.uploadVideo;
 });

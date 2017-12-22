@@ -30,8 +30,8 @@ myApp.service('UserService', function($http, $location){
     });
   }
 
-  self.uploadImage= function (){
-    console.log('uploadImage()')
+  self.uploadFlag= function (){
+    console.log('uploadFlag()')
     var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
     function openPicker() {
         fsClient.pick({
@@ -48,6 +48,63 @@ myApp.service('UserService', function($http, $location){
       }
       openPicker();
     }
+
+    self.uploadImage1= function (){
+      console.log('uploadImage1()')
+      var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
+      function openPicker() {
+          fsClient.pick({
+            fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
+            maxSize:102400000,
+            maxFiles:5,
+            minFiles:1
+          }).then(function(response) {
+            // declare this function to handle response
+            self.newCountry.imageUrl = response.filesUploaded[0].url;
+            console.log(self.userObject, self.newCountry.imageUrl);
+            self.newCountry.image1 = self.newCountry.imageUrl;  
+          });
+        }
+        openPicker();
+      }
+
+      self.uploadImage2= function (){
+        console.log('uploadImage2()')
+        var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
+        function openPicker() {
+            fsClient.pick({
+              fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
+              maxSize:102400000,
+              maxFiles:5,
+              minFiles:1
+            }).then(function(response) {
+              // declare this function to handle response
+              self.newCountry.imageUrl = response.filesUploaded[0].url;
+              console.log(self.userObject, self.newCountry.imageUrl);
+              self.newCountry.image2 = self.newCountry.imageUrl;  
+            });
+          }
+          openPicker();
+        }
+
+        self.uploadVideo= function (){
+          console.log('uploadVideo()')
+          var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
+          function openPicker() {
+              fsClient.pick({
+                fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
+                maxSize:102400000,
+                maxFiles:5,
+                minFiles:1
+              }).then(function(response) {
+                // declare this function to handle response
+                self.newCountry.videoUrl = response.filesUploaded[0].url;
+                console.log(self.userObject, self.newCountry.videoUrl);
+                self.newCountry.video = self.newCountry.videoUrl;  
+              });
+            }
+            openPicker();
+          }
 
     self.addCountry = function () {
       console.log('in addCountry');
