@@ -5,9 +5,9 @@ myApp.config(function($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
-  .when('/world', {
-    templateUrl: '/views/templates/world.html',
-    controller: 'WorldController as wc',
+  .when('/map', {
+    templateUrl: '/views/templates/map.html',
+    controller: 'MapController as mc',
   }).when('/zoom', {
     templateUrl: '/views/templates/zoom.html',
     controller: 'ZoomController as zc',
@@ -39,6 +39,6 @@ myApp.config(function($routeProvider, $locationProvider) {
       }
     })
     .otherwise({
-      redirectTo: 'world'
+      redirectTo: 'map'
     });
 });
