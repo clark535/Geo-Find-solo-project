@@ -10,7 +10,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     controller: 'MapController as mc',
   }).when('/zoom', {
     templateUrl: '/views/templates/zoom.html',
-    controller: 'ZoomController as zc',
+    controller: 'MapController as mc',
   })
     .when('/home', {
       templateUrl: '/views/templates/home.html',

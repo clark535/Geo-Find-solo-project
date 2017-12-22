@@ -7,7 +7,7 @@
                         &key=AIzaSyBXCCVmaJXKRVD4t_t3cCr-pDpV1gy16Gs">
                 </div>
                 <div class="col-md-3" id="flag-column" ng-repeat="flags in mc.countries.list">
-                    <a href="#/zoom"><img ng-src="{{flags.flag}}"></a>
+                    <a href="#/zoom" ng-click="mc.zoomToCountry(flags.country)"><img ng-src="{{flags.flag}}"></a>
                 </div>
             </div>
         </div>
