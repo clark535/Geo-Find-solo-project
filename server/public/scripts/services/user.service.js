@@ -38,7 +38,8 @@ myApp.service('UserService', function($http, $location){
           fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
           maxSize:102400000,
           maxFiles:5,
-          minFiles:1
+          minFiles:1,
+          imageDim: [500, 250]    
         }).then(function(response) {
           // declare this function to handle response
           self.newCountry.imageUrl = response.filesUploaded[0].url;
@@ -57,7 +58,8 @@ myApp.service('UserService', function($http, $location){
             fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
             maxSize:102400000,
             maxFiles:5,
-            minFiles:1
+            minFiles:1,
+            imageDim: [600, 400]
           }).then(function(response) {
             // declare this function to handle response
             self.newCountry.imageUrl = response.filesUploaded[0].url;
@@ -76,7 +78,8 @@ myApp.service('UserService', function($http, $location){
               fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
               maxSize:102400000,
               maxFiles:5,
-              minFiles:1
+              minFiles:1,
+              imageDim: [600, 400]              
             }).then(function(response) {
               // declare this function to handle response
               self.newCountry.imageUrl = response.filesUploaded[0].url;

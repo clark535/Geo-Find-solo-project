@@ -6,11 +6,18 @@
                     <img ng-src="{{mc.mapZoom}}">
                 </div>
                 <div class="col-md-1">
-                <div class="well well-lg" id="media-bubble">
-                                This is the well.
-                                Media shall go here.
+                <div class="well well-lg" id="media-bubble" ng-repeat="country in mc.countries.list">
+                        <button type="button" class="btn btn-default" ng-click="mc.showImage(country)">
+                        <span class="glyphicon glyphicon-picture" ></span>
+                        </button>
+                            <img class="image1" ng-src="{{country.image1}}">
+                                
                 </div>
             </div>
             </div>
         </div>
       </body>
+
+      <!-- ng-repeat="country in mc.countries.list" -->
+      <!-- glyphicon glyphicon-facetime-video / for the video media -->
+      <!-- glyphicon glyphicon-globe / for the home page -->

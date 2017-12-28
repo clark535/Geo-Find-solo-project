@@ -12,7 +12,7 @@ myApp.service('MapService', function($http, $location){
          url: '/map'         
          }).then(function(response) {
              console.log('response', response);
-             self.countries.list = response.data;//this fills up the countries array with the table from the database.
+             self.countries.list = response.data;//this fills up the countries array with the table from the database.          
      });
-     }
+     }  
 });

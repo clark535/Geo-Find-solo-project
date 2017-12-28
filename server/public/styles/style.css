@@ -84,11 +84,10 @@ li a:hover {
   margin: 0;
 }
 
-/* #flag-column {
-  
-  width: 70px;
-} */
-
 body {
   background-color: blanchedalmond;
+}
+
+.image1 {
+ size: 300;
 }
