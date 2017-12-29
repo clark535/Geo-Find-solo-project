@@ -4,7 +4,14 @@ myApp.service('MapService', function($http, $location){
 
     self.zoomedCountry = '';
 
+    self.countryMedia = '';    
+
     self.countries = {list: [] };
+
+    self.mediaDisplay = function(country) {
+        console.log('mediaDisplay is running', country);
+        self.countryMedia = country;
+    }
 
     //GET function pulling the entire array fo opbjects from the countries table in the DB.
     self.getCountries = function() {

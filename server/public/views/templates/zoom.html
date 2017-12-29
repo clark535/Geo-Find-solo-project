@@ -1,6 +1,6 @@
 <body>
         <h1>Zoom test page</h1>
-        <a href="#/map"><button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+        <a href="#/map"><button type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-globe"></span>
                 </button></a>
         
@@ -10,24 +10,24 @@
                     <img ng-src="{{mc.mapZoom}}">
                 </div>
                 <div class="col-md-1">
-                <div class="well well-lg" id="media-bubble" ng-repeat="country in mc.countries.list">
+                <div class="well well-lg" id="media-bubble">
                     <!-- image1 display    -->
-                        <img ng-if="country.show" class="image1" ng-src="{{country.image1}}">
-                        <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                        <img ng-if="countryMedia.show" class="image1" ng-src="{{mc.countryMedia.image1}}">
+                        <button type="button" class="btn btn-default" ng-click="countryMedia.show = !countryMedia.show">
                         <span class="glyphicon glyphicon-picture" ></span>
                         </button>
                         <br>
 
                     <!-- image2 display -->
-                        <img ng-if="country.show" class="image2" ng-src="{{country.image2}}">
-                        <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                        <img ng-if="countries.show" class="image2" ng-src="{{countries.image2}}">
+                        <button type="button" class="btn btn-default" ng-click="countries.show = !countries.show">
                         <span class="glyphicon glyphicon-picture" ></span>
                         </button>
                         <br>
 
                     <!-- video display -->
-                        <img ng-if="country.show" class="video" ng-src="{{country.video}}">
-                        <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                        <img ng-if="countries.show" class="video" ng-src="{{countries.video}}">
+                        <button type="button" class="btn btn-default" ng-click="countries.show = !countries.show">
                         <span class="glyphicon glyphicon-facetime-video" ></span>
                         </button> 
                         
@@ -38,5 +38,3 @@
       </body>
 
       <!-- ng-repeat="country in mc.countries.list" -->
-      <!-- glyphicon glyphicon-facetime-video / for the video media -->
-      <!-- glyphicon glyphicon-globe / for the home page -->
