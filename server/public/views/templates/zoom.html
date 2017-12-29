@@ -1,5 +1,9 @@
 <body>
         <h1>Zoom test page</h1>
+        <a href="#/map"><button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                <span class="glyphicon glyphicon-globe"></span>
+                </button></a>
+        
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col-md-8">
@@ -7,12 +11,26 @@
                 </div>
                 <div class="col-md-1">
                 <div class="well well-lg" id="media-bubble" ng-repeat="country in mc.countries.list">
+                    <!-- image1 display    -->
                         <img ng-if="country.show" class="image1" ng-src="{{country.image1}}">
                         <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
                         <span class="glyphicon glyphicon-picture" ></span>
                         </button>
-                           
-                                
+                        <br>
+
+                    <!-- image2 display -->
+                        <img ng-if="country.show" class="image2" ng-src="{{country.image2}}">
+                        <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                        <span class="glyphicon glyphicon-picture" ></span>
+                        </button>
+                        <br>
+
+                    <!-- video display -->
+                        <img ng-if="country.show" class="video" ng-src="{{country.video}}">
+                        <button type="button" class="btn btn-default" ng-click="country.show = !country.show">
+                        <span class="glyphicon glyphicon-facetime-video" ></span>
+                        </button> 
+                        
                 </div>
             </div>
             </div>
