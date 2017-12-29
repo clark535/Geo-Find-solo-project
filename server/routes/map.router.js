@@ -22,4 +22,24 @@ router.get('/', function (req, res) {
     });
 });
 
+router.delete('/', function(req, res){
+    var deleteCountry = req.query;
+    pool.connect(function(errorConnectingToDatabase, client, done){
+        if (errorConnectingToDatabase) {
+            console.log('error connecting to database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            client.query(`DELETE FROM countries WHERE id=$1;`, [deleteCountry.id], function(errorMakingQuery, result){
+                done();
+                if (errorMakingQuery) {
+                    console.log('error making query', errorMakingQuery);
+                    res.send(500);
+                } else {
+                    res.sendStatus(200);
+                }
+            });
+        }
+    });
+  });//end database delete 
+
 module.exports = router;

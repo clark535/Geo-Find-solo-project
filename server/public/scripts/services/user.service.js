@@ -118,5 +118,6 @@ myApp.service('UserService', function($http, $location){
       }).then(function (response) {
         console.log('response', response);
       })
-    }
+        self.newCountry = '';
+      }
 });

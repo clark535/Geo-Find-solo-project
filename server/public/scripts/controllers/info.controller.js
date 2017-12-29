@@ -4,6 +4,7 @@ myApp.controller('InfoController', function(UserService, MapService) {
   vm.userService = UserService;
   vm.countries = MapService.countries;
   MapService.getCountries();
+  vm.deleteCountry = MapService.deleteCountry;
   
 
   //Filestack controller
