@@ -1,6 +1,54 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
   <p>
-    In Info
+    Edit Country
   </p>
 </div>
+<div class="col-md-4">
+    <div>
+        <div class="dropdown">
+          <!-- <select ng-model="selectedCountry" ng-options="countries.id for country in nations"></select>  -->
+            <select ng-model="ic.countries.list" ng-options="countries.id as countries.country for countries in ic.countries.list track by countries.id"></select>
+            <!-- ng-options="company.id as company.name for company in vm.companies.list track by company.id"></select> -->
+            </div> 
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="ic.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
+            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/{{newCountry.handle}}" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="ic.uploadImage1(newCountry.imageUrl)">Upload first image</button>
+            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/{{imageUrl}}" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="ic.uploadImage2(newCountry.imageUrl)">Upload second image</button>
+            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/newCountry.image2" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+    </div>
+        <br>
+        <br>
+    <div>
+            <button ng-click="ic.uploadVideo(newCountry.videoUrl)">Upload video</button>
+            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/newCountry.video" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+    </div>
+        <br>
+        <br>
+            <button class="btn btn-default" ng-click="ic.addCountry(ic.newCountry)">Submit Country</button>
+        <br>
+        <br>
+            <button class="btn btn-default" ng-click="ic.userService.logout()">Log Out</button>
+</div>
+
+
+  <!-- <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown">Countries</button>
+            <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
+                    <li></li>
+                </ul>
+        </div> -->
