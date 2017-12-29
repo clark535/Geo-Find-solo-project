@@ -29,7 +29,8 @@ router.delete('/', function(req, res){
             console.log('error connecting to database', errorConnectingToDatabase);
             res.sendStatus(500);
         } else {
-            client.query(`DELETE FROM countries WHERE id=$1;`, [deleteCountry.id], function(errorMakingQuery, result){
+            console.log('delete id =', deleteCountry);
+            client.query(`DELETE FROM countries WHERE id=$1;`, [deleteCountry.countries], function(errorMakingQuery, result){
                 done();
                 if (errorMakingQuery) {
                     console.log('error making query', errorMakingQuery);
