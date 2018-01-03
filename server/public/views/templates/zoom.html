@@ -10,31 +10,33 @@
                     <img ng-src="{{mc.mapZoom}}">
                 </div>
                 <div class="col-md-1">
-                <div class="well well-lg" id="media-bubble">
+                <div class="well well-lg">
                     <!-- image1 display    -->
-                        <img ng-if="countryMedia.show" class="image1" ng-src="{{mc.countryMedia.image1}}">
-                        <button type="button" class="btn btn-default" ng-click="countryMedia.show = !countryMedia.show">
+                        <img ng-if="mc.image1show" class="image1" ng-src="{{mc.countryMedia.image1}}">
+                        <button type="button" class="btn btn-default" ng-click="mc.image1show = !mc.image1show">
                         <span class="glyphicon glyphicon-picture" ></span>
                         </button>
+                        <br>
                         <br>
 
                     <!-- image2 display -->
-                        <img ng-if="countries.show" class="image2" ng-src="{{countries.image2}}">
-                        <button type="button" class="btn btn-default" ng-click="countries.show = !countries.show">
+
+                        <img ng-if="mc.image2show" class="image2" ng-src="{{mc.countryMedia.image2}}">
+                        <button type="button" class="btn btn-default" ng-click="mc.image2show = !mc.image2show">
                         <span class="glyphicon glyphicon-picture" ></span>
                         </button>
                         <br>
+                        <br>
 
-                    <!-- video display -->
-                        <img ng-if="countries.show" class="video" ng-src="{{countries.video}}">
-                        <button type="button" class="btn btn-default" ng-click="countries.show = !countries.show">
+                    <!-- video display -->                            
+                        <iframe ng-if="mc.videoshow" width="560" height="315" ng-src="https://www.youtube.com/embed/{{mc.countryMedia.video}}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                        <button type="button" class="btn btn-default" ng-click="mc.videoshow = !mc.videoshow">
                         <span class="glyphicon glyphicon-facetime-video" ></span>
-                        </button> 
-                        
+                        </button>
                 </div>
             </div>
             </div>
         </div>
-      </body>
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/{{mc.countryMedia.video}}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> -->
 
       <!-- ng-repeat="country in mc.countries.list" -->

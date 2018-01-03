@@ -90,24 +90,10 @@ myApp.service('UserService', function($http, $location){
           openPicker();
         }
 
-        self.uploadVideo= function (){
-          console.log('uploadVideo()')
-          var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
-          function openPicker() {
-              fsClient.pick({
-                fromSources:["local_file_system","url","imagesearch","facebook","instagram","googledrive","dropbox","evernote","flickr","box","github","webcam","video","audio"],
-                maxSize:102400000,
-                maxFiles:5,
-                minFiles:1
-              }).then(function(response) {
-                // declare this function to handle response
-                self.newCountry.videoUrl = response.filesUploaded[0].url;
-                console.log(self.userObject, self.newCountry.videoUrl);
-                self.newCountry.video = self.newCountry.videoUrl;  
-              });
-            }
-            openPicker();
-          }
+        // self.uploadVideo= function (){
+        //   console.log('uploadVideo()')
+          
+        //   }
 
     self.addCountry = function () {
       console.log('in addCountry');
