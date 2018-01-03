@@ -90,11 +90,6 @@ myApp.service('UserService', function($http, $location){
           openPicker();
         }
 
-        // self.uploadVideo= function (){
-        //   console.log('uploadVideo()')
-          
-        //   }
-
     self.addCountry = function () {
       console.log('in addCountry');
       $http({
@@ -103,7 +98,9 @@ myApp.service('UserService', function($http, $location){
         data: self.newCountry
       }).then(function (response) {
         console.log('response', response);
+        self.newCountry.country = '';
+        self.newCountry.video = ''; 
       })
-        self.newCountry = '';
+               
       }
 });
