@@ -10,7 +10,7 @@ myApp.controller('MapController', function(MapService) {
     self.countries = MapService.countries;
     MapService.getCountries();
     self.countryMedia = MapService.countryMedia;
-    self.mediaDisplay = MapService.mediaDisplay
+    self.mediaDisplay = MapService.mediaDisplay;
 
     self.zoomToCountry = function(country) {
         console.log('zoomToCountry clicked');

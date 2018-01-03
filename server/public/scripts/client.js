@@ -41,4 +41,13 @@ myApp.config(function($routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: 'map'
     });
+    
+});
+
+
+myApp.filter('youtubeEmbedUrl', function ($sce) {
+  return function(videoId) {
+    // return 'hello';
+    return $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + videoId);
+  };
 });
