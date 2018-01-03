@@ -90,5 +90,13 @@ body {
 }
 
 .image1 {
- size: 300;
+ size: 400;
+}
+
+.image2 {
+  size: 400;
+ }
+
+.glyphicon.glyphicon-globe {
+  font-size: 50px;
 }
