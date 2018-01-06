@@ -6,13 +6,16 @@ body, html {
 }
 
 .instructions .container h1 {
-  font-size: 32px;
+  font-size: 70px;
   font-weight: 600;
+  color: rgb(247, 7, 139);
+  font-family: fantasy;
 }
 
 .instructions {
-  background-color: #333333;
-  color: #DDDDDD;
+  background-image: url("/images/sea-water-background.jpg");  
+  font-size: 28px;
+  font-family: Times New Roman, Times, serif;
   padding: 15px;
 }
 
@@ -49,7 +52,7 @@ body, html {
 }
 
 .navbar {
-  background-color: #333333;
+  background-image: url("/images/sea-water-background.jpg");
   width: 100%;
   border-radius: 0px;
 }
@@ -76,7 +79,7 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   text-decoration: underline;
-  color: #eee;
+  color: rgb(53, 226, 9);
 }
 
 .world-map {
@@ -99,4 +102,8 @@ body {
 
 .glyphicon.glyphicon-globe {
   font-size: 50px;
+}
+
+.views {
+  color: rgb(53, 226, 9);
 }
