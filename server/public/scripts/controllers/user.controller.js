@@ -5,6 +5,7 @@ myApp.controller('UserController', function(UserService) {
   vm.userObject = UserService.userObject;
   vm.addCountry = UserService.addCountry;
   vm.newCountry = UserService.newCountry;
+  // vm.countrySubmitted = UserService.countrySubmitted;
 
   //Filestack controller
   vm.uploadFlag = UserService.uploadFlag;

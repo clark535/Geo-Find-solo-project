@@ -1,57 +1,53 @@
 <div ng-include="'views/partials/nav.html'"></div>
+<a href="#/info">Edit Country</a>
 <div class="container">
     <h2 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h2>
     <h1>Add a Country</h1>
 </div>
 <!-- {{uc.newCountry}} -->
 <br>
-<div class="col-md-4">
+<div class="col-md-6">
     <div>
         <input type="text" ng-model="uc.newCountry.country" placeholder="Name of the Country">
+        <button type="button" class="btn btn-default" ng-click="nameInfo = !nameInfo">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+                </button>
+        <span ng-if="nameInfo" class="panel-name">Please Capitalize the Country Name</span>
+    </div> 
+        <br>
+        <br>
+    <div>
+        <button ng-click="uc.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
+        <button type="button" class="btn btn-default" ng-click="flagInfo = !flagInfo">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+                </button>
+        <span ng-if="flagInfo" class="panel-name">Recommended size for flags is Width: 250 pixels, Height: 500 pixels</span>                    
     </div>
         <br>
         <br>
     <div>
-            <button ng-click="uc.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
-            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/{{newCountry.handle}}" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+        <button ng-click="uc.uploadImage1(newCountry.imageUrl)">Upload first image</button>
     </div>
         <br>
         <br>
     <div>
-            <button ng-click="uc.uploadImage1(newCountry.imageUrl)">Upload first image</button>
-            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/{{imageUrl}}" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+        <button ng-click="uc.uploadImage2(newCountry.imageUrl)">Upload second image</button>
     </div>
         <br>
         <br>
     <div>
-            <button ng-click="uc.uploadImage2(newCountry.imageUrl)">Upload second image</button>
-            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/newCountry.image2" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
+        <input type="text" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
+            <button type="button" class="btn btn-default" ng-click="videoInfo = !videoInfo">
+                    <span class="glyphicon glyphicon-info-sign" ></span>
+                    </button>
+        <span ng-if="videoInfo" class="panel-name">Please only add the unique sequence at the end of the YouTube link, such as:
+                if you click the share button, only add the red portion - https://youtu.be/<span class="youtubeInfo">ryJrPfiDXIs</span></span>                    
     </div>
         <br>
         <br>
-    <div>
-            <input type="text" ng-model="uc.newCountry.video" placeholder="upload Youtube video Url">
-            <!-- <img src="https://cdn.filestackcontent.com/resize=width:48/newCountry.video" alt="Image uploaded with Filestack" title="Image uploaded with Filestack"> -->
-    </div>
-        <br>
-        <br>
-            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry)">Submit Country</button>
+            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
+            <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
         <br>
         <br>
             <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
 </div>
-
-
-
-<!-- <script type="text/javascript">
-    const client = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
-    client.pick();
-  </script> -->
-
-  <!-- <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown">Countries</button>
-            <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
-                    <li></li>
-                </ul>
-        </div> -->

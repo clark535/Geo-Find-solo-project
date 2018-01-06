@@ -107,3 +107,19 @@ body {
 .views {
   color: rgb(53, 226, 9);
 }
+
+.panel-name {
+  /* background-image: url("/images/sea-water-background.jpg");   */
+  background-color: rgb(166, 208, 224);
+  color: black;
+}
+
+.countryAdded {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.youtubeInfo{
+  font-weight: bold;
+  color: red;
+}

@@ -3,6 +3,7 @@ myApp.service('UserService', function($http, $location){
   var self = this;
   self.userObject = {};
   self.newCountry = {};
+  // self.countrySubmitted = false;
 
   self.getuser = function(){
     console.log('UserService -- getuser');
@@ -92,6 +93,7 @@ myApp.service('UserService', function($http, $location){
 
     self.addCountry = function () {
       console.log('in addCountry');
+      // self.countrySubmitted = true;
       $http({
         method: 'POST',
         url: '/user/country',
@@ -99,8 +101,7 @@ myApp.service('UserService', function($http, $location){
       }).then(function (response) {
         console.log('response', response);
         self.newCountry.country = '';
-        self.newCountry.video = ''; 
-      })
-               
-      }
+        self.newCountry.video = '';
+      })       
+    }
 });
