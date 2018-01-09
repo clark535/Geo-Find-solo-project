@@ -50,4 +50,12 @@
         <br>
         <br>
             <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+
+            <div class="col-md-4">
+                <div class="dropdown">
+                    <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>           
+                    </div> 
+            </div>
+
+            <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
 </div>

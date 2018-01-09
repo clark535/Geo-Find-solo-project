@@ -1,10 +1,15 @@
-myApp.controller('UserController', function(UserService) {
+myApp.controller('UserController', function(UserService, MapService) {
   console.log('UserController created');
   var vm = this;
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
   vm.addCountry = UserService.addCountry;
   vm.newCountry = UserService.newCountry;
+
+  //for the delete dropdown and function
+  MapService.getCountries();  
+  vm.countries = MapService.countries;  
+  vm.deleteCountry = MapService.deleteCountry;
   // vm.countrySubmitted = UserService.countrySubmitted;
 
   //Filestack controller
