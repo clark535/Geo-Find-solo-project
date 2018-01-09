@@ -8,14 +8,14 @@ body, html {
 .instructions .container h1 {
   font-size: 70px;
   font-weight: 600;
-  color: rgb(247, 7, 139);
+  color: rgb(247, 7, 39);
   font-family: fantasy;
 }
 
 .instructions {
   background-image: url("/images/sea-water-background.jpg");  
   font-size: 28px;
-  font-family: Times New Roman, Times, serif;
+  font-family: Times, serif;
   padding: 15px;
 }
 
@@ -122,4 +122,8 @@ body {
 .youtubeInfo{
   font-weight: bold;
   color: red;
+}
+
+#addCountry {
+  padding-left: 30px;
 }

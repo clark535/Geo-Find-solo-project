@@ -4,7 +4,7 @@ myApp.controller('MapController', function(MapService) {
 
     self.zoomedCountry = '';
     self.mapZoom = "https://maps.googleapis.com/maps/api/staticmap?center=" + MapService.zoomedCountry + "&zoom=4&size=1416x680&scale=2&style=feature:administrative.country|element:geometry.stroke|color:red&maptype=terrain&key=AIzaSyBXCCVmaJXKRVD4t_t3cCr-pDpV1gy16Gs";
-    
+    self.flagLimit = 5;
 
     console.log(MapService.countries);
     self.countries = MapService.countries;

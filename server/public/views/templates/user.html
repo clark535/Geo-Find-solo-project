@@ -1,12 +1,13 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<a href="#/info">Edit Country</a>
+<!-- <a href="#/info">Edit Country</a> -->
 <div class="container">
     <h2 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h2>
     <h1>Add a Country</h1>
 </div>
 <!-- {{uc.newCountry}} -->
 <br>
-<div class="col-md-6">
+<div class="row justify-content-around">
+    <div class="col-md-4" id="addCountry">
     <div>
         <input type="text" ng-model="uc.newCountry.country" placeholder="Name of the Country">
         <button type="button" class="btn btn-default" ng-click="nameInfo = !nameInfo">
@@ -43,19 +44,27 @@
         <span ng-if="videoInfo" class="panel-name">Please only add the unique sequence at the end of the YouTube link, such as:
                 if you click the share button, only add the red portion - https://youtu.be/<span class="youtubeInfo">ryJrPfiDXIs</span></span>                    
     </div>
-        <br>
-        <br>
-            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
-            <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
-        <br>
-        <br>
+    <div>
+            <br>
+            <br>
+                <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
+                <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
+            <br>
+            <br>
             <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
-
+    </div>
+</div>   
+        <div class="row">
             <div class="col-md-4">
                 <div class="dropdown">
+                    <h4>Select Country to Delete</h4>
                     <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>           
                     </div> 
+                    <br>
+                    <br>
+                <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
             </div>
-
-            <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
+        </div>
+        
+    </div>
 </div>
