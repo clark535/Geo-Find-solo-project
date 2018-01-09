@@ -15,10 +15,11 @@ myApp.controller('MapController', function(MapService) {
     self.zoomToCountry = function(country) {
         console.log('zoomToCountry clicked');
          MapService.zoomedCountry = country;
+         var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
+         var voices = window.speechSynthesis.getVoices();
+         msg.voice = voices[1]; // Note: some voices don't support altering params
+         msg.voiceURI = 'native';         
+         window.speechSynthesis.speak(msg);
          console.log('map zoom is', self.mapZoom);
-    }
-
-    var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
-    window.speechSynthesis.speak(msg);
-    
+    }   
 });
