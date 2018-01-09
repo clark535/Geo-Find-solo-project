@@ -12,9 +12,9 @@
     </div>
         <br>
         <br>
-    <div>
-           <!-- <img ng-src="ic.selectedCountry.country.flag"> -->
-           {{ic.selectedCountry.country.flag}}
+    <div ng-repeat="edit in selectedCountry.countries">
+           <!-- <img ng-src="ic.selectedCountry.countries.flag"> -->
+           <span ng-model="edit.flag"></span>
     </div>
         <br>
         <br>

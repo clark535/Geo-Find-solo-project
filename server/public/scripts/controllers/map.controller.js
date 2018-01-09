@@ -18,5 +18,7 @@ myApp.controller('MapController', function(MapService) {
          console.log('map zoom is', self.mapZoom);
     }
 
+    var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
+    window.speechSynthesis.speak(msg);
     
 });
