@@ -56,6 +56,21 @@
 </div>   
         <div class="row">
             <div class="col-md-4">
+                <h4>Only the first 5 countries will display on the front page!</h4>
+                <br>
+                    <button type="button" class="btn btn-default" ng-click="changeOrder = !changeOrder">Click to change Order</button>
+                    <br>
+               <div ng-if="changeOrder"> 
+                <div ng-repeat="names in uc.countries.list">
+                    <span><input type="text" placeholder="{{names.id}}" size="4">: {{names.country}}</span>
+                </div> 
+                <br>
+                <button>Change Order</button>
+                <br>
+                <br>
+                </div>
+                <br>
+                <br>
                 <div class="dropdown">
                     <h4>Select Country to Delete</h4>
                     <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>           

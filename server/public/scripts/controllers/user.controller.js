@@ -5,7 +5,8 @@ myApp.controller('UserController', function(UserService, MapService) {
   vm.userObject = UserService.userObject;
   vm.addCountry = UserService.addCountry;
   vm.newCountry = UserService.newCountry;
-
+  vm.countries = MapService.countries;
+  
   //for the delete dropdown and function
   MapService.getCountries();  
   vm.countries = MapService.countries;  
