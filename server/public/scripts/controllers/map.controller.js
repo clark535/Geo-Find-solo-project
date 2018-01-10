@@ -11,6 +11,8 @@ myApp.controller('MapController', function (MapService) {
     //setting the limit for flag objects to display on map view
     self.flagLimit = 5;
 
+
+
     //MapServices
     console.log(MapService.countries);
     self.countries = MapService.countries;
@@ -24,8 +26,9 @@ myApp.controller('MapController', function (MapService) {
         MapService.zoomedCountry = country;
         var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
         var voices = window.speechSynthesis.getVoices();
-        msg.voice = voices[1]; // Note: voices are unpredictable at the moment, still experimental tech
+        msg.voice = voices[17]; // Note: voices are unpredictable at the moment, still experimental tech. 7 is the clearest male, 17 the clearest female
         msg.voiceURI = 'native';
+        msg.lang = 'en-US';
         window.speechSynthesis.speak(msg);
         console.log('map zoom is', self.mapZoom);
     }
