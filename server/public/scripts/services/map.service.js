@@ -50,7 +50,7 @@ myApp.service('MapService', function ($http, $location) {
             data: self.countries.list
         }).then(function (response) {
             console.log('response', response);
-            self.getCountries();
         });
+            self.getCountries();
     };
 });
