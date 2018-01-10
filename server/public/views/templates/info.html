@@ -1,49 +1,11 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
-  <p>
-    Edit Country
-  </p>
+    <p>
+        Open view for future plans
+    </p>
 </div>
 <div class="col-md-4">
-        <div class="dropdown">
-            <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in ic.countries.list track by countries.id"></select>           
-            </div> 
+    <div class="dropdown">
+        <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in ic.countries.list track by countries.id"></select>
     </div>
-        <br>
-        <br>
-    <div ng-repeat="edit in selectedCountry.countries">
-           <!-- <img ng-src="ic.selectedCountry.countries.flag"> -->
-           <span ng-model="edit.flag"></span>
-    </div>
-        <br>
-        <br>
-    <div>
-            {{selectedCountry.image1}}
-    </div>
-        <br>
-        <br>
-    <div>
-            {{selectedCountry.image2}}
-    </div>
-        <br>
-        <br>
-    <div>
-            {{selectedCountry.video}}
-    </div>
-        <br>
-        <br>
-            <!-- <button class="btn btn-default" ng-click="ic.addCountry(ic.newCountry)">Submit Country</button>
-        <br> -->
-        <br>
-        <button ng-click="ic.deleteCountry(selectedCountry)">Delete</button>
-            
 </div>
-
-
-  <!-- <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown">Countries</button>
-            <span class="caret"></span></button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
-                    <li></li>
-                </ul>
-        </div> -->

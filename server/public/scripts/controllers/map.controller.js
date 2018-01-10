@@ -1,4 +1,4 @@
-myApp.controller('MapController', function(MapService) {
+myApp.controller('MapController', function (MapService) {
     console.log('MapController created');
     var self = this;
 
@@ -12,14 +12,14 @@ myApp.controller('MapController', function(MapService) {
     self.countryMedia = MapService.countryMedia;
     self.mediaDisplay = MapService.mediaDisplay;
 
-    self.zoomToCountry = function(country) {
+    self.zoomToCountry = function (country) {
         console.log('zoomToCountry clicked');
-         MapService.zoomedCountry = country;
-         var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
-         var voices = window.speechSynthesis.getVoices();
-         msg.voice = voices[1]; // Note: some voices don't support altering params
-         msg.voiceURI = 'native';         
-         window.speechSynthesis.speak(msg);
-         console.log('map zoom is', self.mapZoom);
-    }   
+        MapService.zoomedCountry = country;
+        var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; // Note: some voices don't support altering params
+        msg.voiceURI = 'native';
+        window.speechSynthesis.speak(msg);
+        console.log('map zoom is', self.mapZoom);
+    }
 });

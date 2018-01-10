@@ -8,79 +8,82 @@
 <br>
 <div class="row justify-content-around">
     <div class="col-md-4" id="addCountry">
-    <div>
-        <input type="text" ng-model="uc.newCountry.country" placeholder="Name of the Country">
-        <button type="button" class="btn btn-default" ng-click="nameInfo = !nameInfo">
-                <span class="glyphicon glyphicon-info-sign" ></span>
-                </button>
-        <span ng-if="nameInfo" class="panel-name">Please Capitalize the Country Name</span>
-    </div> 
+        <div>
+            <input type="text" ng-model="uc.newCountry.country" placeholder="Name of the Country">
+            <button type="button" class="btn btn-default" ng-click="nameInfo = !nameInfo">
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </button>
+            <span ng-if="nameInfo" class="panel-name">Please Capitalize the Country Name</span>
+        </div>
         <br>
         <br>
-    <div>
-        <button ng-click="uc.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
-        <button type="button" class="btn btn-default" ng-click="flagInfo = !flagInfo">
-                <span class="glyphicon glyphicon-info-sign" ></span>
-                </button>
-        <span ng-if="flagInfo" class="panel-name">Recommended size for flags is Width: 250 pixels, Height: 500 pixels</span>                    
-    </div>
+        <div>
+            <button ng-click="uc.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
+            <button type="button" class="btn btn-default" ng-click="flagInfo = !flagInfo">
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </button>
+            <span ng-if="flagInfo" class="panel-name">Recommended size for flags is Width: 250 pixels, Height: 500 pixels</span>
+        </div>
         <br>
         <br>
-    <div>
-        <button ng-click="uc.uploadImage1(newCountry.imageUrl)">Upload first image</button>
-    </div>
+        <div>
+            <button ng-click="uc.uploadImage1(newCountry.imageUrl)">Upload first image</button>
+        </div>
         <br>
         <br>
-    <div>
-        <button ng-click="uc.uploadImage2(newCountry.imageUrl)">Upload second image</button>
-    </div>
+        <div>
+            <button ng-click="uc.uploadImage2(newCountry.imageUrl)">Upload second image</button>
+        </div>
         <br>
         <br>
-    <div>
-        <input type="text" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
+        <div>
+            <input type="text" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
             <button type="button" class="btn btn-default" ng-click="videoInfo = !videoInfo">
-                    <span class="glyphicon glyphicon-info-sign" ></span>
-                    </button>
-        <span ng-if="videoInfo" class="panel-name">Please only add the unique sequence at the end of the YouTube link, such as:
-                if you click the share button, only add the red portion - https://youtu.be/<span class="youtubeInfo">ryJrPfiDXIs</span></span>                    
-    </div>
-    <div>
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </button>
+            <span ng-if="videoInfo" class="panel-name">Please only add the unique sequence at the end of the YouTube link, such as: if you click the share button, only
+                add the red portion - https://youtu.be/
+                <span class="youtubeInfo">ryJrPfiDXIs</span>
+            </span>
+        </div>
+        <div>
             <br>
             <br>
-                <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
-                <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
+            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
+            <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
             <br>
             <br>
             <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+        </div>
     </div>
-</div>   
-        <div class="row">
-            <div class="col-md-4">
-                <h4>Only the first 5 countries will display on the front page!</h4>
-                <br>
-                    <button type="button" class="btn btn-default" ng-click="changeOrder = !changeOrder">Click to view Order</button>
-                    <br>
-               <div ng-if="changeOrder"> 
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Only the first 5 countries will display on the front page!</h4>
+            <br>
+            <button type="button" class="btn btn-default" ng-click="changeOrder = !changeOrder">Click to view Order</button>
+            <br>
+            <div ng-if="changeOrder">
                 <div ng-repeat="names in uc.countries.list">
-                    <span><input type="text" ng-model="names.order_id" placeholder="{{names.order_id}}" size="4">: {{names.country}}</span>
-                </div> 
-                <br>
-                <button ng-click="uc.changeOrder(names, orderChanged = !orderChanged)">Change Order</button>
-                <span ng-show="orderChanged" class="countryAdded">  Country Order Updated!</span>                
-                <br>
-                <br>
+                    <span>
+                        <input type="text" ng-model="names.order_id" placeholder="{{names.order_id}}" size="4">: {{names.country}}</span>
                 </div>
                 <br>
+                <button ng-click="uc.changeOrder(names, orderChanged = !orderChanged)">Change Order</button>
+                <span ng-show="orderChanged" class="countryAdded"> Country Order Updated!</span>
                 <br>
-                <div class="dropdown">
-                    <h4>Select Country to Delete</h4>
-                    <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>           
-                    </div> 
-                    <br>
-                    <br>
-                <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
+                <br>
             </div>
+            <br>
+            <br>
+            <div class="dropdown">
+                <h4>Select Country to Delete</h4>
+                <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>
+            </div>
+            <br>
+            <br>
+            <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
         </div>
-        
     </div>
+
+</div>
 </div>

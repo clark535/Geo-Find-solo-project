@@ -1,40 +1,40 @@
 <body>
-        <a href="#/map"><button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-globe"></span>
-                </button></a>
-        
-        <div class="container-fluid">
-            <div class="row no-gutters">
-                <div class="col-md-8">
-                    <img ng-src="{{mc.mapZoom}}">
-                </div>
-                <div class="col-md-1">
+    <a href="#/map">
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-globe"></span>
+        </button>
+    </a>
+
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-8">
+                <img ng-src="{{mc.mapZoom}}">
+            </div>
+            <div class="col-md-1">
                 <div class="well well-lg">
                     <!-- image1 display    -->
                     <button type="button" class="btn btn-default" ng-click="mc.image1show = !mc.image1show">
-                        <span class="glyphicon glyphicon-picture" ></span>
-                        </button>
-                        <img ng-if="mc.image1show" class="image1" ng-src="{{mc.countryMedia.image1}}">
-                        <br>
-                        <br>
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                    <img ng-if="mc.image1show" class="image1" ng-src="{{mc.countryMedia.image1}}">
+                    <br>
+                    <br>
 
                     <!-- image2 display -->
                     <button type="button" class="btn btn-default" ng-click="mc.image2show = !mc.image2show">
-                        <span class="glyphicon glyphicon-picture" ></span>
-                        </button>
-                        <img ng-if="mc.image2show" class="image2" ng-src="{{mc.countryMedia.image2}}">
-                        <br>
-                        <br>
+                        <span class="glyphicon glyphicon-picture"></span>
+                    </button>
+                    <img ng-if="mc.image2show" class="image2" ng-src="{{mc.countryMedia.image2}}">
+                    <br>
+                    <br>
 
-                    <!-- video display --> 
+                    <!-- video display -->
                     <button type="button" class="btn btn-default" ng-click="mc.videoshow = !mc.videoshow">
-                        <span class="glyphicon glyphicon-facetime-video" ></span>
-                        </button>                           
-                        <iframe ng-if="mc.videoshow" width="560" height="315" ng-src="{{mc.countryMedia.video | youtubeEmbedUrl}}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>  
+                        <span class="glyphicon glyphicon-facetime-video"></span>
+                    </button>
+                    <iframe ng-if="mc.videoshow" width="560" height="315" ng-src="{{mc.countryMedia.video | youtubeEmbedUrl}}" frameborder="0"
+                        gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
-            </div>
         </div>
-        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/{{mc.countryMedia.video}}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> -->
-
-      <!-- ng-repeat="country in mc.countries.list" -->
+    </div>

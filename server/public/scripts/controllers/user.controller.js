@@ -1,13 +1,14 @@
 myApp.controller('UserController', function(UserService, MapService) {
   console.log('UserController created');
   var vm = this;
+
+  //UserServices
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
   vm.addCountry = UserService.addCountry;
   vm.newCountry = UserService.newCountry;
-  vm.countries = MapService.countries;
   
-  //for the delete dropdown and function
+  //MapServices
   MapService.getCountries();  
   vm.countries = MapService.countries;  
   vm.deleteCountry = MapService.deleteCountry;

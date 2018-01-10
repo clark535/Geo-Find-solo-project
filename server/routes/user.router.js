@@ -3,14 +3,14 @@ var router = express.Router();
 var pool = require('../modules/pool');
 
 // Handles Ajax request for user information if user is authenticated
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   console.log('get /user route');
   // check if logged in
-  if(req.isAuthenticated()) {
+  if (req.isAuthenticated()) {
     // send back user object from database
     console.log('logged in', req.user);
     var userInfo = {
-      username : req.user.username
+      username: req.user.username
     };
     res.send(userInfo);
   } else {
@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
 });
 
 // clear all server session information about this user
-router.get('/logout', function(req, res) {
+router.get('/logout', function (req, res) {
   // Use passport's built-in method to log out the user
   console.log('Logged out');
   req.logOut();
@@ -30,23 +30,23 @@ router.get('/logout', function(req, res) {
 });
 
 //to post new countries
-router.post('/country', function(req, res){
-  pool.connect(function(errorConnectingToDatabase, client, done){
-      if (errorConnectingToDatabase) {
-          console.log('error connecting to database', errorConnectingToDatabase);
-          res.sendStatus(500);
-      } else {
-          client.query(`INSERT INTO countries (country, flag, image1, image2, video) 
-          VALUES ($1, $2, $3, $4, $5);`, [req.body.country, req.body.flag, req.body.image1, req.body.image2, req.body.video], function(errorMakingQuery, result){
-              done();
-              if (errorMakingQuery) {
-                  console.log('error making query', errorMakingQuery);
-                  res.send(500);
-              } else {
-                  res.sendStatus(201);
-              }
-          });
-      }
+router.post('/country', function (req, res) {
+  pool.connect(function (errorConnectingToDatabase, client, done) {
+    if (errorConnectingToDatabase) {
+      console.log('error connecting to database', errorConnectingToDatabase);
+      res.sendStatus(500);
+    } else {
+      client.query(`INSERT INTO countries (country, flag, image1, image2, video) 
+          VALUES ($1, $2, $3, $4, $5);`, [req.body.country, req.body.flag, req.body.image1, req.body.image2, req.body.video], function (errorMakingQuery, result) {
+          done();
+          if (errorMakingQuery) {
+            console.log('error making query', errorMakingQuery);
+            res.send(500);
+          } else {
+            res.sendStatus(201);
+          }
+        });
+    }
   });
 });
 
