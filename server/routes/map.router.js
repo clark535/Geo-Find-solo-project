@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pool = require('../modules/pool');
 
-
+//getCountries function to populate country objects on the DOM
 router.get('/', function (req, res) {
     pool.connect(function (errorConnectingToDatabase, client, done) {
         if (errorConnectingToDatabase) {
@@ -22,6 +22,7 @@ router.get('/', function (req, res) {
     });
 });
 
+//deleteCountry function to DELETE a country from the DB
 router.delete('/', function(req, res){
     var deleteCountry = req.query;
     pool.connect(function(errorConnectingToDatabase, client, done){
@@ -43,6 +44,7 @@ router.delete('/', function(req, res){
     });
   });//end database delete
   
+  //changeOrder function to UPDATE the order_id column in DB
   router.put('/', function(req, res){
     pool.connect(function(errorConnectingToDatabase, client, done){
         if (errorConnectingToDatabase) {

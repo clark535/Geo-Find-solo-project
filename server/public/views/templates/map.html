@@ -1,14 +1,17 @@
 <body>
-        <div class="container-fluid"> 
-            <div class="row no-gutters">
-                <div>               
-                    <img class="col-lg-9" src="https://maps.googleapis.com/maps/api/staticmap?center=&zoom=1&size=1416x680&scale=2&maptype=terrain
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <!--- world map -->
+            <div>
+                <img class="col-lg-9" src="https://maps.googleapis.com/maps/api/staticmap?center=&zoom=1&size=1416x680&scale=2&maptype=terrain
                         &key=AIzaSyBXCCVmaJXKRVD4t_t3cCr-pDpV1gy16Gs">
-                </div>
-                <div class="col-md-3" ng-repeat="flags in mc.countries.list | limitTo:mc.flagLimit">
-                    <a href="#/zoom" ng-click="mc.zoomToCountry(flags.country); mc.mediaDisplay(flags)"><img ng-src="{{flags.flag}}"></a>
-                </div>
+            </div>
+            <!--- making flags into a view link to zoom view -->
+            <div class="col-md-3" ng-repeat="flags in mc.countries.list | limitTo:mc.flagLimit">
+                <a href="#/zoom" ng-click="mc.zoomToCountry(flags.country); mc.mediaDisplay(flags)">
+                    <img ng-src="{{flags.flag}}">
+                </a>
             </div>
         </div>
-      </body>
-      
+    </div>
+</body>

@@ -1,11 +1,11 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<!-- <a href="#/info">Edit Country</a> -->
+<!-- <a href="#/info"></a> link to extra view for future features-->
 <div class="container">
     <h2 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h2>
     <h1>Add a Country</h1>
 </div>
-<!-- {{uc.newCountry}} -->
 <br>
+<!--- adding a new country -->
 <div class="row justify-content-around">
     <div class="col-md-4" id="addCountry">
         <div>
@@ -52,10 +52,12 @@
             <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
             <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
             <br>
+            <!--- end adding a new country -->
             <br>
             <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
         </div>
     </div>
+    <!--- ordering flag display on map page -->
     <div class="row">
         <div class="col-md-4">
             <h4>Only the first 5 countries will display on the front page!</h4>
@@ -74,7 +76,9 @@
                 <br>
             </div>
             <br>
+            <!--- end ordering flag display controls -->
             <br>
+            <!--- delete country controls -->
             <div class="dropdown">
                 <h4>Select Country to Delete</h4>
                 <select ng-model="selectedCountry.countries" ng-options="countries.id as countries.country for countries in uc.countries.list track by countries.id"></select>
@@ -84,6 +88,4 @@
             <button ng-click="uc.deleteCountry(selectedCountry)">Delete</button>
         </div>
     </div>
-
-</div>
 </div>

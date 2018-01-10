@@ -44,10 +44,9 @@ myApp.config(function($routeProvider, $locationProvider) {
     
 });
 
-
+//whitelisting youTube url's for video feature
 myApp.filter('youtubeEmbedUrl', function ($sce) {
   return function(videoId) {
-    // return 'hello';
     return $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + videoId);
   };
 });

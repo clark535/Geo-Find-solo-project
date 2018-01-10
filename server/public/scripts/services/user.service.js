@@ -30,6 +30,7 @@ myApp.service('UserService', function ($http, $location) {
       });
     }
 
+    //filestack picker functions for image upload on user view
   self.uploadFlag = function () {
     console.log('uploadFlag()')
     var fsClient = filestack.init('AF3T8OSZBQD2kfV6tOFiPz');
@@ -88,8 +89,9 @@ myApp.service('UserService', function ($http, $location) {
       });
     }
     openPicker();
-  }
+  }//end filestack functions
 
+  //adding a country function in user view
   self.addCountry = function () {
     console.log('in addCountry');
     // self.countrySubmitted = true;
