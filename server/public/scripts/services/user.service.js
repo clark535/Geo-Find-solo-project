@@ -3,7 +3,6 @@ myApp.service('UserService', function($http, $location){
   var self = this;
   self.userObject = {};
   self.newCountry = {};
-  // self.countrySubmitted = false;
 
   self.getuser = function(){
     console.log('UserService -- getuser');

@@ -11,7 +11,7 @@ myApp.controller('UserController', function(UserService, MapService) {
   MapService.getCountries();  
   vm.countries = MapService.countries;  
   vm.deleteCountry = MapService.deleteCountry;
-  // vm.countrySubmitted = UserService.countrySubmitted;
+  vm.changeOrder = MapService.changeOrder;
 
   //Filestack controller
   vm.uploadFlag = UserService.uploadFlag;

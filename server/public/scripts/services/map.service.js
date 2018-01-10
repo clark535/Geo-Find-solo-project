@@ -8,6 +8,8 @@ myApp.service('MapService', function($http, $location){
 
     self.countries = {list: [] };
 
+    //self.orderId = '';
+
     self.mediaDisplay = function(country) {
         console.log('mediaDisplay is running', country);
         self.countryMedia = country;
@@ -35,5 +37,16 @@ myApp.service('MapService', function($http, $location){
                 self.getCountries();
                 
             })
+        };
+
+        self.changeOrder = function() {
+            $http({
+              method: 'PUT',
+              url: '/map/',
+              data: self.countries.list
+              }).then(function(response) {
+                 //console.log('response', response);
+                 self.getCountries();
+            });
         };
 });
