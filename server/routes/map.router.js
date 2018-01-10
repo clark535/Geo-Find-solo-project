@@ -49,14 +49,13 @@ router.delete('/', function(req, res){
             console.log('error connecting to database', errorConnectingToDatabase);
             res.sendStatus(500);
         } else {
-            for (let i = 0; i < req.body.length; i++) {
-                client.query(`UPDATE countries SET order_id = $1 WHERE id = $2;`, [req.body[i].order_id, req.body[i].id], function(errorMakingQuery, result){
+            var order = req.body;
+            for (let i = 0; i < order.length; i++) {
+                client.query(`UPDATE countries SET order_id = $1 WHERE id = $2;`, [order[i].order_id, order[i].id], function(errorMakingQuery, result){
                     done();
                 if (errorMakingQuery) {
                         console.log('error making query', errorMakingQuery);
                         res.send(500);
-                    } else {
-                        //res.sendStatus(200);
                     }
                 });
             }

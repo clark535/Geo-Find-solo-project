@@ -65,7 +65,8 @@
                     <span><input type="text" ng-model="names.order_id" placeholder="{{names.order_id}}" size="4">: {{names.country}}</span>
                 </div> 
                 <br>
-                <button ng-click="uc.changeOrder(names)">Change Order</button>
+                <button ng-click="uc.changeOrder(names, orderChanged = !orderChanged)">Change Order</button>
+                <span ng-show="orderChanged" class="countryAdded">  Country Order Updated!</span>                
                 <br>
                 <br>
                 </div>

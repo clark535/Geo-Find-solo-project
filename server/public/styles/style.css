@@ -79,7 +79,7 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   text-decoration: underline;
-  color: rgb(53, 226, 9);
+  color: rgb(247, 7, 39);
 }
 
 .world-map {
