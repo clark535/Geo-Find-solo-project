@@ -1,10 +1,20 @@
-# Name of Project
+# Geo-Find
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+Geo-Find is an educational tool geared at teaching children about geography and international culture.
+The target demographic are young students ages 3-8. The main view has a large map of the Earth displayed with five national flags on the right hand side. When a student clicks on the flag they are take to a zoomed in view of that country, while also hearing a synthesised voice speak the countryies name. On the zoom view the student can click on images and video icons to see preloaded pictures of the country and a youTube video. The teacher view requires a login, then the teacher is take to a view where they can add a new country object with a flag of their choice, two images and a youTube video. They can also choose wich five country flags are displayed on the world view so they can change up which countries they are teaching at any time. There is also an option to delete a country.
+
+ Link to the live version of the app if it's hosted on Heroku.
 
 ## Built With
 
-List technologies and frameworks here
+I used the following technologies to build this web application:
+
+SQL for the database.                 Filestack API
+AngularJs                             GoogleMaps Static API
+Express                               Speech Sythesis
+Node                                  Angular-Route
+Bootstrap
+
 
 ## Getting Started
 
@@ -15,24 +25,39 @@ These instructions will get you a copy of the project up and running on your loc
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- 
 
 
 ### Installing
 
 Steps to get the development environment running.
 
-```sql
-CREATE TABLE "users" (
-  "id" serial primary key,
-  "username" varchar(80) not null UNIQUE,
-  "password" varchar(240) not null
+```sqlCREATE TABLE countries (
+id SERIAL PRIMARY KEY,
+country VARCHAR(120) not null UNIQUE,
+flag VARCHAR(120),
+image1 VARCHAR(120),
+image2 VARCHAR(120),
+video VARCHAR(120),
+order_id VARCHAR(5)
+);
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+userName VARCHAR(80) not null UNIQUE,
+password VARCHAR(80) not null
+);
+
+CREATE TABLE junction (
+user_id VARCHAR(80),
+country_id VARCHAR(80)
 );
 ```
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+Geo-Find world view sceen.png found in images folder.
+Geo-Find Zoom view.png found in images folder.
 
 ## Documentation
 
@@ -57,7 +82,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
+* Dave Clark
 
 
 ## Acknowledgments
