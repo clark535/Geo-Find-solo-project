@@ -24,7 +24,7 @@ myApp.controller('MapController', function (MapService) {
         MapService.zoomedCountry = country;
         var msg = new SpeechSynthesisUtterance(MapService.zoomedCountry);
         var voices = window.speechSynthesis.getVoices();
-        msg.voice = voices[17]; // Note: voices are unpredictable at the moment, still experimental tech. 7 is the clearest male, 17 the clearest female
+        msg.voice = voices[25]; // Note: voices are unpredictable at the moment, still experimental tech. 7 is the clearest male, 17 the clearest female, 25 is good
         msg.voiceURI = 'native';
         msg.lang = 'en-US';
         window.speechSynthesis.speak(msg);
