@@ -13,7 +13,7 @@ SQL for the database.                 Filestack API
 AngularJs                             GoogleMaps Static API
 Express                               Speech Sythesis
 Node                                  Angular-Route
-Bootstrap
+Bootstrap                             Passport for Auth
 
 
 ## Getting Started
@@ -25,14 +25,19 @@ These instructions will get you a copy of the project up and running on your loc
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- 
+- [AngularJs]()
+- [Express]()
+- [Bootstrap]()
+- [PostgresSQL]()
+
 
 
 ### Installing
 
 Steps to get the development environment running.
 
-```sqlCREATE TABLE countries (
+```sql
+CREATE TABLE countries (
 id SERIAL PRIMARY KEY,
 country VARCHAR(120) not null UNIQUE,
 flag VARCHAR(120),
@@ -56,8 +61,8 @@ country_id VARCHAR(80)
 
 ## Screen Shot
 
-Geo-Find world view sceen.png found in images folder.
-Geo-Find Zoom view.png found in images folder.
+![Screen-shot](Geo-Find-world-view-sceen.png)
+![Screen-shot2](Geo-Find-Zoom-view.png)
 
 ## Documentation
 

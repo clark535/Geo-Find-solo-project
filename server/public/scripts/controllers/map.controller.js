@@ -11,8 +11,6 @@ myApp.controller('MapController', function (MapService) {
     //setting the limit for flag objects to display on map view
     self.flagLimit = 5;
 
-
-
     //MapServices
     console.log(MapService.countries);
     self.countries = MapService.countries;
@@ -30,6 +28,6 @@ myApp.controller('MapController', function (MapService) {
         msg.voiceURI = 'native';
         msg.lang = 'en-US';
         window.speechSynthesis.speak(msg);
-        console.log('map zoom is', self.mapZoom);
+        console.log('map zoom is', self.mapZoom);       
     }
 });
