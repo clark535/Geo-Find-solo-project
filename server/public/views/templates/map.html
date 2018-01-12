@@ -1,5 +1,5 @@
 <header ng-include="'/views/partials/header.html'"></header>
-<body>
+<body>             
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--- world map -->
@@ -10,7 +10,7 @@
             <!--- making flags into a view link to zoom view -->
             <div class="col-md-3" ng-repeat="flags in mc.countries.list | limitTo:mc.flagLimit">
                 <a href="#/zoom" ng-click="mc.zoomToCountry(flags.country); mc.mediaDisplay(flags)">
-                    <img ng-src="{{flags.flag}}">
+                    <img class="flagBlocks" ng-src="{{flags.flag}}">
                 </a>
             </div>
         </div>

@@ -94,7 +94,6 @@ myApp.service('UserService', function ($http, $location) {
   //adding a country function in user view
   self.addCountry = function () {
     console.log('in addCountry');
-    // self.countrySubmitted = true;
     $http({
       method: 'POST',
       url: '/user/country',
