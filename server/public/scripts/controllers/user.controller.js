@@ -9,10 +9,10 @@ myApp.controller('UserController', function(UserService, MapService) {
   vm.newCountry = UserService.newCountry;
   
   //MapServices
-  MapService.getCountries();  
   vm.countries = MapService.countries;  
   vm.deleteCountry = MapService.deleteCountry;
   vm.changeOrder = MapService.changeOrder;
+  MapService.getCountries();      
 
   //Filestack controller
   vm.uploadFlag = UserService.uploadFlag;

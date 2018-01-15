@@ -183,3 +183,8 @@ body {
   .myStyle {
     background-color: yellow;
   }
+
+  .imageSubmit {
+    font-size: 15px;
+    font-weight: bold;
+  }

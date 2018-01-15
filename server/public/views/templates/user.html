@@ -19,7 +19,8 @@
         <br>
         <br>
         <div>
-            <button ng-click="uc.uploadFlag(newCountry.imageUrl)">Upload Flag image</button>
+            <button ng-click="uc.uploadFlag(newCountry.imageUrl, flagSubmitted = !flagSubmitted)">Upload Flag image</button>
+            <span ng-if="flagSubmitted" class="imageSubmit">Flag image submitted!</span>
             <button type="button" class="btn btn-default" ng-click="flagInfo = !flagInfo">
                 <span class="glyphicon glyphicon-info-sign"></span>
             </button>
@@ -28,26 +29,26 @@
         <br>
         <br>
         <div>
-            <button ng-click="uc.uploadImage1(newCountry.imageUrl)">Upload first image</button>
+            <button ng-click="uc.uploadImage1(newCountry.imageUrl, image1Submitted = !image1Submitted)">Upload first image</button>
+            <span ng-if="image1Submitted" class="imageSubmit">First image submitted!</span>            
         </div>
         <br>
         <br>
         <div>
-            <button ng-click="uc.uploadImage2(newCountry.imageUrl)">Upload second image</button>
+            <button ng-click="uc.uploadImage2(newCountry.imageUrl, image2Submitted = !image2Submitted)">Upload second image</button>
+            <span ng-if="image2Submitted" class="imageSubmit">Second image submitted!</span>            
         </div>
         <br>
         <br>
         <div>
-            <input type="text" ng-change="uc.videoParser(uc.newCountry.video)" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
+            <input class="col-lg-6" type="text" ng-change="uc.videoParser(uc.newCountry.video)" ng-model="uc.newCountry.video" placeholder="Shared Youtube video Url">
             <button type="button" class="btn btn-default" ng-click="videoInfo = !videoInfo">
                 <span class="glyphicon glyphicon-info-sign"></span>
             </button>
-            <span ng-if="videoInfo" class="panel-name">Please only add the unique sequence at the end of the YouTube link, such as: if you click the share button, only
-                add the red portion - https://youtu.be/
-                <span class="youtubeInfo">ryJrPfiDXIs</span>
+            <span ng-if="videoInfo" class="panel-name">Please only add the YouTube link found in the SHARE option on YouTube.com, such as: 
+                <span class="youtubeInfo">https://youtu.be/7dFYQgSETo0</span>, it will already be highlighted for you, just click the word copy.
             </span>
         </div>
-        {{uc.newCountry.video}}
         <!-- <div>
             <iframe class="videoImage" width="560" height="315" ng-src="{{uc.countryMedia.video | youtubeEmbedUrl}}"
             frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
@@ -68,7 +69,7 @@
         <div class="col-md-4">
             <h4>Only the first 5 countries will display on the front page!</h4>
             <br>
-            <button type="button" class="btn btn-default" ng-click="uc.getCountries(); changeOrder = !changeOrder">Click to view Order</button>
+            <button type="button" class="btn btn-default" ng-click="changeOrder = !changeOrder">Click to view Order</button>
             <br>
             <div ng-if="changeOrder">
                 <div ng-repeat="names in uc.countries.list">
