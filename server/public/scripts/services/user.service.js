@@ -1,4 +1,4 @@
-myApp.service('UserService', function ($http, $location) {
+myApp.service('UserService', function ($http, $location, MapService) {
   console.log('UserService Loaded');
   var self = this;
   self.userObject = {};
@@ -103,5 +103,6 @@ myApp.service('UserService', function ($http, $location) {
       self.newCountry.country = '';
       self.newCountry.video = '';
     })
+    MapService.getCountries();
   }
 });

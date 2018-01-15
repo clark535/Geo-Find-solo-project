@@ -64,7 +64,7 @@
             <br>
             <br>
             <!--- submit button creating new country object in DB -->
-            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted)">Submit Country</button>
+            <button class="btn btn-default" ng-click="uc.addCountry(uc.newCountry, countrySubmitted = !countrySubmitted); uc.getCountries()">Submit Country</button>
             <span ng-show="countrySubmitted" class="countryAdded">Country Added!</span>
             <br>
             <!--- end adding a new country -->
