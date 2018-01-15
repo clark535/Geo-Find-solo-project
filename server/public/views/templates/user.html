@@ -38,7 +38,7 @@
         <br>
         <br>
         <div>
-            <input type="text" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
+            <input type="text" ng-change="uc.videoParser(uc.newCountry.video)" ng-model="uc.newCountry.video" placeholder="Youtube video Url">
             <button type="button" class="btn btn-default" ng-click="videoInfo = !videoInfo">
                 <span class="glyphicon glyphicon-info-sign"></span>
             </button>
@@ -47,6 +47,11 @@
                 <span class="youtubeInfo">ryJrPfiDXIs</span>
             </span>
         </div>
+        {{uc.newCountry.video}}
+        <!-- <div>
+            <iframe class="videoImage" width="560" height="315" ng-src="{{uc.countryMedia.video | youtubeEmbedUrl}}"
+            frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        </div> -->
         <div>
             <br>
             <br>
@@ -63,12 +68,12 @@
         <div class="col-md-4">
             <h4>Only the first 5 countries will display on the front page!</h4>
             <br>
-            <button type="button" class="btn btn-default" ng-click="changeOrder = !changeOrder">Click to view Order</button>
+            <button type="button" class="btn btn-default" ng-click="uc.getCountries(); changeOrder = !changeOrder">Click to view Order</button>
             <br>
             <div ng-if="changeOrder">
                 <div ng-repeat="names in uc.countries.list">
                     <span>
-                        <input type="text" value="set background" ng-click="myStyle={'background-color':'yellow'}" ng-style="myStyle" ng-model="names.order_id"
+                        <input type="text" value="set background" ng-click="clickColor={'background-color':'yellow'}" ng-style="clickColor" ng-model="names.order_id"
                             placeholder="{{names.order_id}}" size="4">: {{names.country}}</span>
                 </div>
                 <br>

@@ -18,4 +18,10 @@ myApp.controller('UserController', function(UserService, MapService) {
   vm.uploadFlag = UserService.uploadFlag;
   vm.uploadImage1 = UserService.uploadImage1;
   vm.uploadImage2 = UserService.uploadImage2;
+
+  vm.videoParser = function(videoId) {
+    var videoUrl = videoId.slice(17);
+    vm.newCountry.video = videoUrl;
+    console.log('videoParser triggered', videoUrl);
+  }
 });

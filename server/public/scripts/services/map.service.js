@@ -36,9 +36,7 @@ myApp.service('MapService', function ($http, $location) {
             url: '/map/',
             params: deleteCountry
         }).then(function (response) {
-
             self.getCountries();
-
         })
     };
 
