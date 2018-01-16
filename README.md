@@ -16,21 +16,20 @@ Node                                  Angular-Route
 Bootstrap                             Passport for Auth
 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- [AngularJs]()
-- [Express]()
-- [Bootstrap]()
-- [PostgresSQL]()
+- [AngularJs](https://angularjs.org/)
+- [Express](https://expressjs.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [PostgresSQL](https://www.postgresql.org/)
+- [Filestack] (https://www.filestack.com/)
+- [GoogleMaps Static API] (https://google-developers.appspot.com/maps/documentation/static-maps/)
 
-
+- To run the application as your own you will need a GoogleMaps API key and a Filestack API key;
+   however, for testing and demo purposes you can use the keys provided here. 
 
 ### Installing
 
@@ -58,32 +57,12 @@ user_id VARCHAR(80),
 country_id VARCHAR(80)
 );
 ```
+Junction table not recommended for optimal UI as it will prevent teachers/parents from sharing resources/lesson plans. 
 
 ## Screen Shot
 
 ![Screen-shot](Geo-Find-world-view-sceen.png)
 ![Screen-shot2](Geo-Find-Zoom-view.png)
-
-## Documentation
-
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
-
-### Completed Features
-
-High level list of items completed.
-
-- [x] Feature a
-- [x] Feature b
-
-### Next Steps
-
-Features that you would like to add at some point in the future.
-
-- [ ] Feature c
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
