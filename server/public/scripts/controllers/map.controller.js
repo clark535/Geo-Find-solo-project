@@ -9,7 +9,7 @@ myApp.controller('MapController', function (MapService) {
     self.mapZoom = "https://maps.googleapis.com/maps/api/staticmap?center=" + MapService.zoomedCountry + "&zoom=4&size=680x480&scale=2&style=feature:administrative.country|element:geometry.stroke|color:red&maptype=terrain&key=AIzaSyBXCCVmaJXKRVD4t_t3cCr-pDpV1gy16Gs";
     
     //setting the limit for flag objects to display on map view
-    self.flagLimit = 5;
+    self.flagLimit = 6;
 
     //MapServices
     console.log(MapService.countries);

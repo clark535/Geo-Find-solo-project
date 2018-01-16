@@ -87,8 +87,8 @@ li a:hover {
 
 /* map.html view styling */
 .world-map {
-  padding: 0;
-  margin: 0;
+  padding-top: 0px;
+  margin: 0px;
 }
 
 body {
@@ -98,8 +98,12 @@ body {
 
 .flagBlocks {
   border: 3px;
-  border-radius: 5px;
+  border-radius: 3px;
+  border-left: 2px;
+  border-right: 2px;
   border-style: ridge;
+  padding-left: 2px;
+  padding-right: 2px;
   background-image: url("/images/sea-water-background.jpg");  
 }
 /* End map.html view styling */
