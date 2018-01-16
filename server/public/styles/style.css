@@ -188,3 +188,21 @@ body {
     font-size: 15px;
     font-weight: bold;
   }
+
+  #logo {
+    font-size: 60px;
+    text-shadow: 1px 1px 1px rgb(0, 45, 128);
+    animation: pulse 5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      color: darkblue;
+    }
+    50% {
+      color: rgb(140, 33, 202);
+    }
+    100% {
+      color: rgb(38, 226, 38);
+    }
+  }
