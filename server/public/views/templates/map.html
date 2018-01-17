@@ -8,7 +8,7 @@
                         &key=AIzaSyBXCCVmaJXKRVD4t_t3cCr-pDpV1gy16Gs">
             </div>
             <!--- making flags into a view link to zoom view -->
-            <div class="col-md-3" ng-repeat="flags in mc.countries.list | limitTo:mc.flagLimit">
+            <div class="col-sm-3" ng-repeat="flags in mc.countries.list | limitTo:mc.flagLimit">
                 <a href="#/zoom" ng-click="mc.zoomToCountry(flags.country); mc.mediaDisplay(flags)">
                     <img class="flagBlocks col-md-12" ng-src="{{flags.flag}}">
                 </a>
