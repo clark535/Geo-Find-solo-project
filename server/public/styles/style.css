@@ -149,18 +149,21 @@ body {
   position: absolute;
   left: 20px;
   z-index: 99;
+  padding-top: 30px;
  }
  
  .image2 {
    position: absolute;
    left: 250px;
-   z-index: 99;   
+   z-index: 99;
+   padding-top: 30px;   
   }
 
   .videoImage {
     position: absolute;
     right: 25px;
-    z-index: 99;    
+    z-index: 99;
+    padding-top: 30px;   
   }
 
   .mediaSpan {
